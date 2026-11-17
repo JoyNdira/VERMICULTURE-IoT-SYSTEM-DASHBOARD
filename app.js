@@ -1,4 +1,6 @@
 const C = window.CONFIG;
+Chart.defaults.color = "#9aa0bd";
+Chart.defaults.borderColor = "rgba(255,255,255,.06)";
 const $ = id => document.getElementById(id);
 let usbMode = false;
 
