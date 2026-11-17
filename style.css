@@ -1,0 +1,36 @@
+:root{
+  --soil:#2b1d14; --peat:#5a4535; --paper:#eef1ea; --card:#fff;
+  --leaf:#4f7f4a; --worm:#c2575b; --amber:#d9992b; --line:#d9ded2;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --soil:#f1ece4; --peat:#b9a898; --paper:#1d1812; --card:#292219; --line:#3d3226; }
+}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;background:var(--paper);color:var(--soil);font:16px/1.5 Figtree,system-ui,sans-serif;max-width:1100px;margin-inline:auto}
+h1,h2,.value{font-family:"Bricolage Grotesque",Figtree,sans-serif}
+h1{margin:0;font-size:2rem;font-weight:800}
+h2{margin:0 0 6px;font-size:1rem;font-weight:600;color:var(--peat)}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+header p{margin:0;color:var(--peat)}
+.right{display:flex;gap:10px;align-items:center}
+.pill{padding:4px 12px;border-radius:99px;background:var(--line);font-size:.9rem}
+.pill.ok{background:var(--leaf);color:#fff}.pill.bad{background:var(--worm);color:#fff}
+button{font:inherit;padding:6px 14px;border-radius:8px;border:1.5px solid var(--soil);background:transparent;color:var(--soil);cursor:pointer}
+button:hover{background:var(--soil);color:var(--paper)}
+button:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+#alerts{margin:18px 0 0;display:grid;gap:8px}
+.alert{background:var(--worm);color:#fff;padding:12px 16px;border-radius:10px;font-weight:600}
+.alert.info{background:var(--amber);color:#2b1d14}
+main{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.tile{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--leaf);border-radius:12px;padding:16px}
+.tile.big{grid-column:span 2}
+.tile.low,.tile.high{border-left-color:var(--worm)}
+.tile.off{display:none}
+.value{margin:0;font-size:2.4rem;font-weight:800;line-height:1.1}
+.big .value{font-size:4rem}
+.value small{font-size:1.2rem;font-weight:600;color:var(--peat);margin-left:4px}
+.range{margin:4px 0 0;font-size:.85rem;color:var(--peat)}
+#updated{color:var(--peat);font-size:.9rem;margin:12px 0 24px}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.charts div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+@media (max-width:760px){main{grid-template-columns:1fr 1fr}.charts{grid-template-columns:1fr}.big .value{font-size:3rem}}

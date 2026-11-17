@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worm Bed Monitor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>Worm bed monitor</h1>
+    <p id="bedLine">Bed 1</p>
+  </div>
+  <div class="right">
+    <span id="status" class="pill">Connecting…</span>
+    <button id="usbBtn" type="button">Connect by USB</button>
+  </div>
+</header>
+
+<section id="alerts" aria-live="polite"></section>
+
+<main>
+  <article class="tile big" id="tMoist">
+    <h2>Soil moisture</h2>
+    <p class="value"><span id="vMoist">--</span><small>%</small></p>
+    <p class="range">Healthy range 40 to 80%</p>
+  </article>
+  <article class="tile big" id="tTemp">
+    <h2>Air temperature</h2>
+    <p class="value"><span id="vTemp">--</span><small>°C</small></p>
+    <p class="range">Healthy range 15 to 25°C</p>
+  </article>
+  <article class="tile" id="tHum">
+    <h2>Air humidity</h2>
+    <p class="value"><span id="vHum">--</span><small>%</small></p>
+  </article>
+  <article class="tile" id="tPh">
+    <h2>pH</h2>
+    <p class="value"><span id="vPh">--</span></p>
+    <p class="range">Healthy range 6.5 to 7.5</p>
+  </article>
+</main>
+
+<p id="updated">Waiting for the first reading…</p>
+
+<section class="charts">
+  <div><h2>Moisture over time</h2><canvas id="cMoist"></canvas></div>
+  <div><h2>Temperature over time</h2><canvas id="cTemp"></canvas></div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
